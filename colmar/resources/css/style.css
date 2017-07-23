@@ -1,0 +1,440 @@
+/*Main css page for the Colmar final project
+Dev: Andrew Vanderpool
+
+NOTES:
+-I like to write most of my margins and paddings explicitly instead of top, right ...
+-Many sizes of things in the redline were not specified so I had to assume a lot.
+-Due to this many things to not look exactly the same but close enough for government work.
+-I did not program mobile first
+-In the end I gave up on the images in the highlights section in the mobile mode. I could not get them to scale the way I wanted
+
+other style sheets referenced:
+reset sheet is used
+font awesome
+google fonts
+*/
+/*Set project font size*/
+html {
+  font-size: 8px;
+  font-family: 'Lato', sans-serif;
+  color: #4a4a4a;
+  background-color: #f3f5f5
+}
+/*set basic attributes of headings and other elements that reset got rid of*/
+h1 {
+  font-size: 5.5rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.9rem;
+  line-height: 1.4;
+}
+/*handles the image and video sizing*/
+img, video {
+  height: auto;
+  width: 100%;
+}
+/*to hide the font awesome icons in desktop mode*/
+.mobile {
+  display: none;
+}
+/*Make the header split into two parts and set the height and width*/
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 8rem;
+    width: 100%;
+    background-color: white;
+}
+/*Sets the left side stuff and the font for the logo*/
+.left {
+  display: flex;
+  margin-left: 3rem;
+  font-size: 3rem;
+}
+
+.left a {
+  display: flex;
+  align-items: center;
+  text-decoration:none;
+  color: #4a4a4a;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#logo-img {
+  width:5rem;
+}
+/*sets the right side as flex to get stuff centered*/
+.right {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+}
+/*sets to flex to get things to be next to each other*/
+.right nav ul {
+  display: flex;
+}
+/*sets the links to stle them up*/
+header .right nav > ul > li > a {
+  text-decoration: none;
+  color: black;
+  font-size: 2.5rem;
+  padding: 2rem 1rem;
+}
+/*colors on hover*/
+header .right nav > ul > li:hover a {
+  background-color: gray;
+  color: white;
+}
+
+/*******Main content for page styling********/
+/*this gets used mulitple times for several sections. I thought about making a flex class but decided against it. Let me know if thats how I should have done it*/
+.content-container {
+  display: flex;
+  width: 100%;
+}
+/*Is used for every content-container as they all are set up pretty much the same way*/
+.left-content {
+  width: 60%;
+}
+
+/*sets up the fright content side of the content-container*/
+.right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2rem;
+}
+/*everything having to do with the banner section*/
+/*used to set the background of several items thoughout the page to gray as it got used many times so I just made it a class*/
+.gray-back {
+  background-color: #d8d8d8;
+}
+/*sets image margins*/
+#banner .left-content {
+    margin: 4rem 5rem 4rem 3rem;
+}
+/*sets the right content for the banner*/
+#banner .right-content {
+  justify-content: center;
+  width: 30%;
+}
+/*Made the font as heavy as I could to get it close to the redline. I think it has to do with the font I picked*/
+#banner .right-content h1, #banner .right-content h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 2rem 0rem;
+}
+
+/*styles the start here button*/
+#btn-starthere {
+  margin: 2rem 0rem;
+  width: 100%;
+  padding: 1rem 0rem;
+  background-color: #4a4a4a;
+  text-align: center;
+  font-size: 3rem;
+  text-decoration: none;
+  color: white;
+}
+
+#btn-starthere:hover {
+  text-decoration: underline;
+  color: #cecece;
+  background-color: #656565
+}
+
+.information {
+  display: flex;
+  width: 52.875rem;
+  height: 21rem;
+}
+
+.divider {
+  border-left: 1px solid #d8d8d8;
+  margin-left: 1rem;
+  padding-top: 2rem;
+}
+/*handles the text in the practice section*/
+.practice {
+  margin: 4rem 0rem 0rem 0rem;
+}
+
+.practice p {
+  margin: 3rem 0rem;
+}
+
+.practice span {
+  font-size: 1.5rem;
+}
+
+.info-img {
+  width: 35%;
+  margin: 2rem;
+}
+
+.info {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0rem 0rem 0rem 2rem;
+}
+
+.info h3 {
+  margin: 1rem 0rem;
+}
+
+.info a {
+
+  text-decoration: none;
+  color: Blue;
+  font-size: 2rem;
+}
+
+.info a:hover {
+  text-decoration: underline;
+  color: lightblue;
+}
+
+#highlights .left-content {
+    padding: 4rem 2rem 3rem 3rem;
+}
+/*this feels like a stupidly long chained rule to get down to that paragraph, but it seemed unnecessary to make a special id just for it*/
+#highlights .right-content .information .info p {
+  margin: 1rem 0rem;
+}
+
+#highlights .right-content .information {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+#learning {
+  padding:4rem 0rem;
+}
+
+#learning h2 {
+  text-align: center;
+  margin: 0rem 0rem 4rem 0rem;
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.course-item {
+  height: auto;
+  width: 35rem;
+  margin: 1rem 2rem;
+  background-color: white;
+}
+
+.details {
+  margin: 2rem 2rem 3rem 2rem;
+}
+
+.details h4 {
+}
+
+.details p {
+  line-height: 1.4;
+  margin: 1rem 0rem;
+
+}
+
+.thesis .info h4 {
+}
+
+.thesis .info p {
+  line-height: 1.3;
+  margin: 1rem 0rem;
+}
+/*styling the weird minus sign. I dont know if this is supposed to be a text overflow or something...*/
+.thesis .info span {
+  font-size: 2rem;
+}
+
+#thesis {
+  margin: 4rem 0rem 4rem 3rem;
+}
+
+#thesis h2 {
+  margin: 0rem 0rem 4rem 0rem;
+  text-align: center;
+}
+
+.urban h4 {
+  margin: 2rem 0rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 8rem;
+  width: 100%;
+  border-top: 1px solid #d8d8d8;
+}
+
+footer .left span, footer .right nav ul li {
+  font-size: 1.5rem;
+  padding-top: 2rem;
+}
+
+footer .right nav >ul >li > a {
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  color: #4a4a4a;
+  padding: 1rem;
+}
+
+footer .right nav >ul >li:hover >a {
+  text-decoration: underline;
+  color: #cecece;
+}
+
+/*I set my media query to be at a natural breaking point where the top nav go cramped*/
+@media screen and (max-width:750px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  .divider {
+    border: none;
+    margin: 0rem;
+    padding: 0rem;
+  }
+/*I would probably make this into an accordian with bootstrap or something if I was making this a real website*/
+  .course-item img {
+    display: none;
+  }
+
+  .details p {
+    display: none;
+  }
+
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-content {
+    width: initial;
+  }
+
+  .right-content {
+    width: initial;
+    margin: 2rem;
+  }
+
+  #banner .right-content {
+    width: initial;
+    margin: 4rem 2rem;
+  }
+
+  #banner .right-content h1 {
+    margin:0rem 0rem 4rem 0rem;
+  }
+
+  #banner .right-content h4 {
+    margin:0rem 0rem 3rem 0rem;
+  }
+
+  #banner .left-content {
+    height: 22.5rem;
+    background-color: darkgray;
+    margin: 0rem;
+    width: 100%;
+  }
+
+  #btn-starthere {
+    margin: 0rem;
+  }
+
+  .information {
+    flex-direction: column;
+    width: 100%;
+    height: initial;
+  }
+
+  #highlights .right-content .information {
+  border: none;
+  }
+/*sets the background back to the whiteish color*/
+  #highlights .gray-back {
+    background-color: #f3f5f5;
+  }
+
+  .info-img {
+    width: 100%;
+    margin: 0;
+  }
+
+  .info {
+    width: initial;
+    margin: 2rem 2rem;
+  }
+  /*sets the background back to the whiteish color*/
+  #learning {
+    background-color: #f3f5f5;
+    border: 1px solid #d8d8d8;
+  }
+
+  #learning h2 {
+    margin: 0rem 0rem 2rem 0rem;
+  }
+
+  #thesis {
+    margin: 4rem 0rem 3rem 0rem;
+  }
+
+  #thesis h2 {
+    margin: 0rem 0rem 4rem 0rem;
+  }
+
+  header .right nav > ul > li > a {
+    padding: 2rem 3rem;
+  }
+
+  footer {
+    height: initial;
+  }
+  footer .left span {
+    padding: 2rem 0rem;
+  }
+  .course-item {
+    background-color: #d8d8d8;
+    margin: 0rem 2rem 1rem 2rem;
+  }
+
+}
